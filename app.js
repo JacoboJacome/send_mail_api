@@ -1,12 +1,16 @@
 const express = require("express");
 const cors = require('cors');
 
+const dotenv = require("dotenv").config();
+
 //Routers
 const { email } = require("./routers/sendEmail.routers");
 
 const app = express();
 
-app.listen(3001, () => {
+const PORT = process.env.PORT || 3001;
+
+app.listen(PORT, () => {
   console.log("server listen port 3001");
 });
 
